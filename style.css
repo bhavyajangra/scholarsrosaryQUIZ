@@ -1,14 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #3498db; /* blue background */
 }
 
 .quiz-container {
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #fff;
     border: 1px solid #ddd;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
 
 .question-container {
@@ -19,23 +21,37 @@ body {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: #333;
 }
 
-#options {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
 }
 
-#options li {
-    margin-bottom: 10px;
+.options-grid li {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
-#options li input[type="radio"] {
+.options-grid li:hover {
+    background-color: #eee;
+}
+
+.options-grid li input[type="radio"] {
     margin-right: 10px;
 }
 
-#submit-btn {
+.options-grid li label {
+    font-size: 18px;
+    color: #666;
+}
+
+.btn-submit {
     background-color: #4CAF50;
     color: #fff;
     padding: 10px 20px;
@@ -44,7 +60,7 @@ body {
     cursor: pointer;
 }
 
-#submit-btn:hover {
+.btn-submit:hover {
     background-color: #3e8e41;
 }
 
@@ -58,7 +74,41 @@ body {
     color: #666;
 }
 
-#next-btn {
+.correct {
+    color: #2ecc71; /* green */
+    animation: correct-answer 0.5s ease-in-out;
+}
+
+.incorrect {
+    color: #e74c3c; /* red */
+    animation: incorrect-answer 0.5s ease-in-out;
+}
+
+@keyframes correct-answer {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes incorrect-answer {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-next {
     background-color: #4CAF50;
     color: #fff;
     padding: 10px 20px;
@@ -67,6 +117,6 @@ body {
     cursor: pointer;
 }
 
-#next-btn:hover {
+.btn-next:hover {
     background-color: #3e8e41;
 }
