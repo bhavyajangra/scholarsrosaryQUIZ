@@ -1,4 +1,3 @@
-
 const questions = [
     {
         question: "What is the primary color that can't be created by mixing other colors?",
@@ -51,7 +50,7 @@ function showResults() {
 
     questions.forEach((questionData, index) => {
         const answerElement = document.createElement("p");
-        answerElement.textContent = `Question ${index + 1}: ${questionData.options[questionData.answer]}`;
+        answerElement.textContent = `Question ${index + 1}: ${questionData.options[questionData.answer]}`; // Corrected line
         answersContainer.appendChild(answerElement);
     });
 }
